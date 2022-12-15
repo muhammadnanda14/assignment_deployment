@@ -11,8 +11,8 @@ const AddPhoto = () => {
   const addPhoto = (e) => {
     e.preventDefault();
     const datas = {
-      imageUrl,
-      captions,
+      imageUrl: imageUrl,
+      captions: captions,
       createdAt: `${Date().toString()}`,
       updatedAt: `${Date().toString()}`,
       secret: secret,

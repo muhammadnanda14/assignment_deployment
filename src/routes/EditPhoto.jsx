@@ -19,7 +19,7 @@ const EditPhoto = () => {
       updatedAt: `${Date().toString()}`,
     };
 
-    fetch("https://gallery-app-server.vercel.app/photos" + id, {
+    fetch("https://gallery-app-server.vercel.app/photos/" + id, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(datas),
@@ -34,7 +34,7 @@ const EditPhoto = () => {
   const edit = async () => {
     setLoading(true);
     try {
-      const url = await fetch(`https://gallery-app-server.vercel.app/photos${id}`);
+      const url = await fetch(`https://gallery-app-server.vercel.app/photos/${id}`);
       const respon = await url.json();
       setImageUrl(respon["imageUrl"]);
       setCaptions(respon.captions);
